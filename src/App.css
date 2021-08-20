@@ -1,0 +1,65 @@
+.App {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.MuiToolbar-root {
+  background-color: rgb(133, 113, 8)9 !important;
+}
+
+.MuiButton-containedSecondary {
+  background-color: rgb(133, 113, 89) !important;
+}
+
+.MuiIconButton-colorSecondary {
+  color: rgb(133, 113, 89) !important;
+}
+
+.MuiButton-containedPrimary {
+  background-color: rgb(133, 113, 89) !important;
+}
+
+.MuiPaginationItem-textPrimary.Mui-selected {
+  background-color: rgb(133, 113, 89) !important;
+}
+
+.MuiButton-contained {
+  color: white;
+  background-color: rgb(133, 113, 89) !important;
+}
+
+.MuiIconButton-colorPrimary {
+  color: rgb(133, 113, 89) !important;
+}
+
+.makeStyles-avatar-11 {
+  background-color: rgb(133, 113, 89) !important;
+}
+
+.makeStyles-avatar-13 {
+  background-color: rgb(133, 113, 89) !important;
+}
+
+.MuiBottomNavigationAction-root.Mui-selected {
+  color: white !important;
+}
+
+.MuiBottomNavigation-root {
+  background-color: rgb(133, 113, 89) !important;
+}
+
+.MuiSlider-root {
+  color: rgb(133, 113, 89) !important;
+}
+
+.MuiButton-outlinedPrimary {
+  background-color: rgb(133, 113, 89) !important;
+  color: white !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: rgb(133, 113, 89) !important;
+}
