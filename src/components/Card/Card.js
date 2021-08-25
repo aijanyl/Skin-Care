@@ -3,6 +3,7 @@ import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import "./Card.css";   
 import { createBrowserHistory } from "history";
+import { Link } from "@material-ui/core";
 
 export default class Payment extends React.Component {
     state = {
@@ -24,7 +25,7 @@ export default class Payment extends React.Component {
     };
     paynow = () => {
         const { history } = this.props;
-        history.push("/");
+        history.push("/invoice");
     };
 
     render() {
@@ -71,10 +72,10 @@ export default class Payment extends React.Component {
                         onChange={this.handleInputChange}
                         onFocus={this.handleInputFocus}
                     />
-
+                    <Link to={'/thankyou'}>
                     <button className="pay_now" onClick={this.paynow}>
                         Pay now
-                    </button>
+                    </button></Link>
                 </form>
             </div>
         );

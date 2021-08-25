@@ -37,6 +37,8 @@ return (
 			<Heading>News</Heading>
 			
 			<FooterLink href="#" inputMode >Sign up to our newsletter</FooterLink>
+			<input  placeholder="Your Email" style={{ borderColor:"pink" }}/>
+
 			
 		</Column>
 		<Column>
@@ -48,9 +50,9 @@ return (
 				</span>
 			</i>
 			</FooterLink>
-			<FooterLink href="https://www.instagram.com/online_store_violet/">
+			<FooterLink href="https://www.instagram.com/kylieskin/">
 			<i className="fab fa-instagram">
-				<span style={{ marginLeft: "20" }}>
+				<span style={{ }}>
 				Instagram
 				</span>
 			</i>

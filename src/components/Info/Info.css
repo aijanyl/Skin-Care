@@ -1,0 +1,9 @@
+@media all and (max-width: 960px) {
+    img{
+        width: 100vw;
+    }
+
+    video{
+        width: 100vw;
+    }
+}

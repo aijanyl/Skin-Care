@@ -1,7 +1,7 @@
 import { Button, IconButton, makeStyles, Paper, TextField } from '@material-ui/core';
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { productContext } from '../../contexts/ProductsContext';
 
 const useStyles = makeStyles(theme => ({
@@ -28,7 +28,8 @@ const Add = () => {
         image: '',
         price: '',
         type: '',
-        description: ''
+        description: '',
+        comments: []
     })
 
     const { addProduct } = useContext(productContext)
@@ -42,17 +43,17 @@ const Add = () => {
     }
 
     const handleSave = () => {
-        if (!values.image) values.image = "https://i.pinimg.com/originals/a7/79/47/a77947a1642ac6c93875406c17a554bf.jpg"
+        if (!values.image) values.image = "https://images.pexels.com/photos/5632327/pexels-photo-5632327.jpeg?cs=srgb&dl=pexels-karolina-grabowska-5632327.jpg&fm=jpg"
         addProduct(values)
         history.push('/')
     }
 
     return (
-        <Paper elevation={3} className={classes.paper}>
-            <h1 style={{ textAlign: 'center' }}>Add product</h1>
-            <div style={{ display: 'flex', justifyContent: 'space-around', color: 'black' }}>
+        <Paper elevation={3} className={classes.paper} style={{marginTop:'100px'}}>
+            <h1 style={{ textAlign: 'center', color:'pink' }}>Add product</h1>
+            <div style={{ display: 'flex', justifyContent: 'space-around', color: 'pink'}}>
                 <div>
-                    <img style={{ width: '400px' }} src={values.image ? values.image : "https://i.pinimg.com/originals/a7/79/47/a77947a1642ac6c93875406c17a554bf.jpg"} alt="jewellery image" />
+                    <img style={{ width: '400px' }} src={values.image ? values.image : "https://images.pexels.com/photos/5632359/pexels-photo-5632359.jpeg?cs=srgb&dl=pexels-karolina-grabowska-5632359.jpg&fm=jpg"} alt="jewellery image" />
                 </div>
 
                 <div
@@ -70,9 +71,10 @@ const Add = () => {
                         <TextField name='price' onChange={handleInp} value={values.price} variant='outlined' label='Price' />
                         <TextField name='description' onChange={handleInp} value={values.description} variant='outlined' label='Description' />
                     </form>
+                    <Link to={'/list'}>
                     <IconButton aria-label='share' onClick={handleSave}>
-                        <Button variant="contained" color="secondary">Add</Button>
-                    </IconButton>
+                        <Button variant="contained" color="white">Add</Button>
+                    </IconButton></Link>
                 </div>
             </div>
         </Paper>

@@ -1,47 +1,40 @@
 import React from 'react'
-import we from './we/we.jpg'
+import about from './we/about.mp4'
 import we2 from './we/we2.jpeg'
 import './Aboutus.css'
 const  AboutUs =()=> {
 
     return (
         <div>
-              <>
-                <div className="container emp-profile">
+              <><div>
+                    <h2  className="our2" style={{display:'flex',justifyContent:'center' }}>About Us</h2>
+
+              </div>
+                <div className="container-e">
                     
-                                   <h2 style={{display:'flex',justifyContent:'center' }}>About Us</h2>
-                        {/* <div className="row">
-                        <div className=" col-md-4"> */}
-                                <img width="50%" height="400" src={we} alt="we" />
+                      
+                    <video className="video" width="50%" height="400px"  autoPlay loop muted>
+                    <source src ={about} type='video/mp4'/>
+                    </video> 
                                 <img width="50%" height="400" src={we2} alt="we"/>
                             </div>
+                                
+                                   <p >
+Skins Cosmetics is the place to be for exceptional beauty products and refined perfumes. Since 2000, Skins Cosmetics has been introducing unique brands from all over the world, all with a special story and created by passionate founders. With these discoveries, Skins Cosmetics surprises and inspires its customers, combining the best service and advice from employees with a lot of knowledge and passion for the profession.
 
-                                   <p>Fashion is our expression and we have a passion for it. But it doesn’t stop there. We want to make a difference.  We want to empower women to empower the world.
-Violet first came to life because there was no Violet. And since that day our mission has been to empower young women across the globe to salute sisterhood. Whether we address social sustainability, body rights, mental health, periods – or simply new fashion trends, we want to inspire everyone to express their own unique style and feel worthy just the way they are. Our aim is to offer an alternative, when it comes to our store experience, in our signatures style and in our mission to empower.​
+History and concept
+Skins Cosmetics brought about a true revolution in Dutch cosmetics in 2000. It was the very first store in the Netherlands where only niche brands were sold that were not previously available in the Netherlands. The founders of Skins Cosmetics had a clear vision: we are looking for the perfume, make-up and skincare brands that are still undiscovered in the Netherlands, but already have an iconic status abroad. Not only the brands, but also the store design and service distinguish Skins from other cosmetic stores. The people who work at Skins are passionate about their profession, proud of the beautiful brands and are happy to share this with their customers. Sampling is inevitably linked to this. Customers are always invited and encouraged to take samples home, to experience the difference with other products or to see if the scent really suits them. There is no pressure to buy right away.
 
-As a purpose-driven brand we not only want to be recognised for our on-trend collections and sisterhood values, but also for our brave sustainability efforts and conscious initiatives. We’re in this for the long-haul and we’d love for you to join us on this journey.
+The long term counts at Skins Cosmetics: building a bond and showing what else exists in the world of perfume and cosmetics. We want people to be happy with their purchase and the personalized, independent advice that is provided. This has already resulted in various awards since opening, like the prestigious annual retail award for service and innovation and the award 'Amsterdam Entrepreneur of the Year'.
 
-Violet aims to be part of driving global change by putting its purpose, to empower women to empower the world, at the forefront of everything we do. Monki.com delivers to 31 markets, and via International shipping to an additional 64 destinations worldwide. Monki.tmall.com offers Monki fashion in China and wholesale ensures global shipping. Over 100 concept stores offer the Monki IRL experience across 20 markets. Founded 2006 in Sweden, Monki is a brand within the H&M group.​
+Skins Cosmetics is an official reseller of all brands that are sold in the Skins stores and on skins.nl. This means that we purchase directly from the brands and thus guarantee that we deliver authentic quality products in a completely legal manner.
 
-2020 and beyond
-2020 has us reflecting on how we're living up to our aim. How we can take a clear position on being kind and being empowering. Because we want to make a real difference in the real world. Which is why we're aligning how we can 'be kind to the world' and 'be empowering' with two of the United Nation's Sustainability Development Goals (SDGs):
- 
-SDG 5 — Gender equality
-SDG 12 — Sustainable consumption and production
+Official retail prices
+On the internet, however, the same products can often be found at lower prices in the so-called "gray trade". These companies offer products at cost price because they often do not (fully) operate legally, offer products that are counterfeit or because the products have reached the expiration date. As an official reseller, Skins Cosmetics uses the recommended prices that are set from the brands and is always able to offer authentic quality products.</p>
 
-SDGs in a nutshell
-Curious about what the United Nations' Sustainable Development Goals are? Think of the SDGs as a global action plan. 17 goals that focus on ending poverty, protecting the planet and improving the lives of everyone. In 2015, all UN Member states adopted these goals and set out a 15-year plan to achieve them by 2030. And 2020 sees a decade of countries, companies and people ramping up action to make sure we can achieve these, together, by 2030. Read more about the UN SDGs.
-
-So, who's in charge?
-While our mission is Violet wide, we have a core group in place to ensure we stay on track. This team is comprised of individuals from each department within Violet. There are so many people behind the scenes and many amazing co-labs and partnerships that go into making this happen. </p>
-                           
                             <div>
 
-                            {/* </div>
-                        
-
-                        </div> */}
-                
+                           
                 </div>
               </>  
             </div>

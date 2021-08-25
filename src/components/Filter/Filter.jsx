@@ -69,16 +69,16 @@ const Filter = () => {
 
     return (
         <Grid item md={3}>
-            <Paper elevation={2} className={classes.paper}>
-                <FormControl component="fieldset">
-                    <FormLabel component="legend">Type</FormLabel>
-                    <RadioGroup aria-label="gender" name="gender1" value={type} onChange={handleChangeType}>
-                        <FormControlLabel value="Подвеска" control={<Radio />} label="Подвеска" />
-                        <FormControlLabel value="Серьги" control={<Radio />} label="Серьги" />
-                        <FormControlLabel value="Кольцо" control={<Radio />} label="Кольца" />
-                        <FormControlLabel value="Браслет" control={<Radio />} label="Браслеты" />
-                        <FormControlLabel value="Чокер" control={<Radio />} label="Чокеры" />
-                        <FormControlLabel value="Кафф" control={<Radio />} label="Каффы" />
+            <Paper elevation={2} className={classes.paper} style={{marginTop:'80px'}}>
+                <FormControl component="fieldset" style={{color:'pink'}}>
+                    <FormLabel component="legend" color="pink">Type</FormLabel>
+                    <RadioGroup aria-label="gender" name="gender1" value={type} onChange={handleChangeType} style={{color:'pink'}}>
+                        <FormControlLabel value="Hand Cream" control={<Radio />} label="Hand Cream" />
+                        <FormControlLabel value="Night Cream" control={<Radio />} label="Night Cream" />
+                        <FormControlLabel value="Tonic" control={<Radio />} label="Tonic" />
+                        <FormControlLabel value="Serum" control={<Radio />} label="Serum" />
+                        <FormControlLabel value="Face Mask" control={<Radio />} label="Face Mask" />
+                        <FormControlLabel value="Face Wash" control={<Radio />} label="Face Wash" />
                     </RadioGroup>
                 </FormControl>
 
@@ -88,10 +88,11 @@ const Filter = () => {
                         onChange={handleChangePrice}
                         aria-labelledby="discrete-slider"
                         valueLabelDisplay="auto"
-                        min={0}
-                        max={5000}
+                        min={10}
+                        max={500}
+                        style={{color:'pink'}}
                     />
-                    <Button variant='outlined' color='primary' onClick={handleDrop} >Drop</Button>
+                    <Button variant='outlined' style={{color:'pink'}} onClick={handleDrop} >Drop</Button>
                 </Grid>
             </Paper>
         </Grid>

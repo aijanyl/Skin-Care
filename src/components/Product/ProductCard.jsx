@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { productContext } from '../../contexts/ProductsContext';
 
+
 const useStyles = makeStyles({
     root: {
         maxWidth: 345,
@@ -25,11 +26,12 @@ const useStyles = makeStyles({
 
 export default function ProductCard({ item, history }) {
     const classes = useStyles();
-    const { deleteProduct, addProductInCart, checkProductInCart } = useContext(productContext)
-
+    const { deleteProduct, addProductInCart, checkProductInCart , addProductInFavorites } = useContext(productContext)
+    
     return (
         <Card className={classes.root}>
-            <CardHeader
+            <CardHeader 
+                color="pink"
                 title={item.title}
                 subheader={item.type}
             />
@@ -39,7 +41,6 @@ export default function ProductCard({ item, history }) {
                     alt="Contemplative Reptile"
                     height="300"
                     image={item.image}
-                // title="Contemplative Reptile"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
@@ -53,23 +54,26 @@ export default function ProductCard({ item, history }) {
             <CardActions>
                 <Link to={`/edit/${item.id}`} style={{ color: 'black', textDecoration: 'none' }}>
                     <IconButton aria-label="add to favorites" color="inherit">
-                        <EditIcon />
+                        <EditIcon style={{color:'pink'}} />
                     </IconButton>
                 </Link>
                 <IconButton aria-label="share" color="inherit" onClick={() => deleteProduct(item.id, history)}>
-                    <DeleteIcon />
+                    <DeleteIcon style={{color:'pink'}} />
                 </IconButton>
                 <IconButton aria-label="share" onClick={() => addProductInCart(item)} color={checkProductInCart(item.id) ? "secondary" : "inherit"}>
-                    <ShoppingCartIcon />
+                    <ShoppingCartIcon style={{color:'pink'}}/>
                 </IconButton>
-                <IconButton aria-label="add to favorites" color="inherit">
+            
+                <IconButton onClick={()=> addProductInFavorites(item)} aria-label="add to favorites" style={{color:'pink'}}>
                     <FavoriteIcon />
                 </IconButton>
                 <Link to={`/detail/${item.id}`} style={{ textDecoration: 'none', color: 'black' }}>
-                    <IconButton aria-label='share'>
-                        <Button variant="contained" color="secondary">Detail</Button>
+                    <IconButton style={{color:'pink'}} aria-label='share'>
+                        <Button variant="contained" style={{color:'pink'}}>Detail</Button>
                     </IconButton>
                 </Link>
+                
+                
             </CardActions>
         </Card>
     );

@@ -36,11 +36,8 @@ const HeroSlider = () => {
         </div>
         <div className="col-md-6 offset-md-3 my-auto text-center text-white">
           <h1 className="text-uppercase mb-2 font-weight-bold">Slide 1</h1>
-          <p className="mb-5 small">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cumque,
-            ex quibusdam dolorem quae itaque velit. Nobis nesciunt sed corrupti
-            ab quia neque, porro laborum error, autem facilis voluptates
-            laboriosam?
+          <p className="mb-5 small">If you've ever found yourself saying, "Gee, I sure do love Skin Care's Special Hand Cream With Vitamin E, but I wish it smelled more like roses," the brand has answered your highly specific prayers. This reformulation of one of its top sellers infused with the beneficial flower, joining other softening, smoothing ingredients like vitamin E to fully wrap your hands in much-needed hydration.
+            
           </p>
         </div>
       </div>
@@ -54,11 +51,8 @@ const HeroSlider = () => {
         </div>
         <div className="col-md-6 offset-md-3 my-auto text-center text-white">
           <h1 className="text-uppercase mb-2 font-weight-bold">Slide 1</h1>
-          <p className="mb-5 small">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cumque,
-            ex quibusdam dolorem quae itaque velit. Nobis nesciunt sed corrupti
-            ab quia neque, porro laborum error, autem facilis voluptates
-            laboriosam?
+          <p className="mb-5 small">If you've ever found yourself saying, "Gee, I sure do love Skin Care's Special Hand Cream With Vitamin E, but I wish it smelled more like roses," the brand has answered your highly specific prayers. This reformulation of one of its top sellers infused with the beneficial flower, joining other softening, smoothing ingredients like vitamin E to fully wrap your hands in much-needed hydration.
+            
           </p>
         </div>
       </div>
@@ -73,10 +67,7 @@ const HeroSlider = () => {
         <div className="col-md-6 offset-md-3 my-auto text-center text-white">
           <h1 className="text-uppercase mb-2 font-weight-bold">Slide 1</h1>
           <p className="mb-5 small">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cumque,
-            ex quibusdam dolorem quae itaque velit. Nobis nesciunt sed corrupti
-            ab quia neque, porro laborum error, autem facilis voluptates
-            laboriosam?
+          If you've ever found yourself saying, "Gee, I sure do love Skin Care's Special Hand Cream With Vitamin E, but I wish it smelled more like roses," the brand has answered your highly specific prayers. This reformulation of one of its top sellers infused with the beneficial flower, joining other softening, smoothing ingredients like vitamin E to fully wrap your hands in much-needed hydration.
           </p>
         </div>
       </div>

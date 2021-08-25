@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { productContext } from '../../contexts/ProductsContext';
 import ProductCard from './ProductCard';
 import { Pagination } from '@material-ui/lab';
-import Filter from '../Filter/Filter';
+import Filter from '../Filter/Filter'
+
 
 const ProductList = () => {
     let history = useHistory();
@@ -34,8 +35,14 @@ const ProductList = () => {
 
     return (
         <>
-        {/* <Filter> */}
-            <Grid container spacing={3} justify="space-evenly" style={{ marginTop: '0px' }}>
+            <div className="back2" style={{backgroundColor:'', display: 'flex' , marginTop:'150px'}} >
+            <Grid style={{width:'300px'}}>
+                <div style={{position: 'fixed'}}>
+
+                <Filter/>
+                </div>
+            </Grid>
+            <Grid container spacing={3} justify="space-evenly" style={{ marginTop: '0px' , maxWidth: '1200px'}}>
                 {
                     products ? (
                         products.map((item, index) => (
@@ -44,15 +51,17 @@ const ProductList = () => {
                     ) : (<h1>Loading...</h1>)
                 }
             </Grid>
-            <div>
+            </div>
+            <Grid container justify="center" style={{marginTop:'50px', marginBottom:'50px'}} >
                 <Pagination
+                    
                     count={paginatedPages}
-                    color="primary"
+                    color="pink"
                     onChange={handlePage}
                     page={+page}
                 />
-            </div>
-            {/* </Filter> */}
+            </Grid>
+            
         </>
     );
 };
