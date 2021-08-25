@@ -7,40 +7,40 @@
 
 
 .MuiToolbar-root {
-  background-color: rgb(133, 113, 8)9 !important;
+  background-color: pink !important;
 }
 
 .MuiButton-containedSecondary {
-  background-color: rgb(133, 113, 89) !important;
+  background-color: pink !important;
 }
 
 .MuiIconButton-colorSecondary {
-  color: rgb(133, 113, 89) !important;
+  color: pink !important;
 }
 
 .MuiButton-containedPrimary {
-  background-color: rgb(133, 113, 89) !important;
+  background-color: pink !important;
 }
 
 .MuiPaginationItem-textPrimary.Mui-selected {
-  background-color: rgb(133, 113, 89) !important;
+  background-color: pink !important;
 }
 
 .MuiButton-contained {
-  color: white;
-  background-color: rgb(133, 113, 89) !important;
+  color: white !important;
+  background-color: pink !important;
 }
 
 .MuiIconButton-colorPrimary {
-  color: rgb(133, 113, 89) !important;
+  color: pink !important;
 }
 
 .makeStyles-avatar-11 {
-  background-color: rgb(133, 113, 89) !important;
+  background-color: pink !important;
 }
 
 .makeStyles-avatar-13 {
-  background-color: rgb(133, 113, 89) !important;
+  background-color: pink !important;
 }
 
 .MuiBottomNavigationAction-root.Mui-selected {
@@ -48,18 +48,67 @@
 }
 
 .MuiBottomNavigation-root {
-  background-color: rgb(133, 113, 89) !important;
+  background-color: pink !important;
 }
 
 .MuiSlider-root {
-  color: rgb(133, 113, 89) !important;
+  color: pink !important;
 }
 
 .MuiButton-outlinedPrimary {
-  background-color: rgb(133, 113, 89) !important;
+  background-color: pink !important;
   color: white !important;
 }
 
 .MuiFormLabel-root.Mui-focused {
-  color: rgb(133, 113, 89) !important;
+  color: pink !important;
 }
+.logo{
+  font-size: 30px;
+  text-align: left;
+}
+.MuiPaginationItem-page.Mui-selected{
+  background-color: pink !important;
+}
+.makeStyles-avatar-4{
+  background-color: pink !important;
+}
+.makeStyles-avatar-18{
+  background-color: gainsboro !important;
+}
+.makeStyles-avatar-2 {
+    background-color: gainsboro !important
+}
+
+.MuiTypography-h5 {
+  font-size: 18px !important;
+  font-weight: 300 !important;
+}
+.MuiRating-root{
+  color: pink !important;
+}
+
+.MuiTypography-h2 {
+  font-weight: 600 !important;
+}
+
+.makeStyles-users-6{
+  color: pink !important;
+}
+.makeStyles-commentWindow-2 {
+  width: 400px !important;
+  border: solid 2px pink !important;
+  height: 200px !important;
+  padding: 10px;
+  overflow: scroll;
+  margin-top: 30px;
+}
+
+.makeStyles-comment-5 {
+  width: 150px !important;
+  border: 1px solid pink !important;
+  height: 49px !important;
+  margin-bottom: 10px !important;
+  border-radius: 5px !important;
+}
+

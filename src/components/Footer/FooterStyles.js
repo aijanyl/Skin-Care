@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Box = styled.div`
 padding: 80px 60px;
-background:rgb(133, 113, 89)  ;
+background:rgb(242 , 196 , 208)  ;
 
 bottom: 0;
 width: 100%;
@@ -55,6 +55,7 @@ text-decoration: none;
 `;
 
 export const Heading = styled.p`
+margin-left:-2px;
 font-size: 20px;
 color: white;
 margin-bottom: 40px;

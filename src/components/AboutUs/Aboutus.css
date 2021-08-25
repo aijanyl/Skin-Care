@@ -2,7 +2,13 @@ body{
     /* display: flex; */
     color: black;
 }
-
+.our2{
+    margin-top: 90px;
+    color: pink;
+}
+.container-e{
+    display: flex;
+}
 p{
     color: black;
     margin: 20px;

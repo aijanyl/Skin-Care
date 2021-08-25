@@ -24,10 +24,11 @@ const useStyles = makeStyles({
         // maxWidth: 1000,
         width: '100vw',
         minWidth:'400px',
-        margin: '40px auto'
+        margin: '40px auto',
+        marginTop:'120px',
     },
     title: {
-        backgroundColor: 'rgb(172, 146, 115)'
+        backgroundColor: 'rgb(241 , 196 , 208)'
     }
 });
 
@@ -83,7 +84,7 @@ const Cart = () => {
                     </TableRow>
                     <TableRow >
                         <Link to='/payment' style={{textDecoration:'none'}}><TableCell colSpan={3} align="right">
-                            <Button onClick={buy} variant="contained" color="primary"> BUY</Button>
+                            <Button onClick={buy} variant="contained"  style={{color:'pink'}}> BUY</Button>
                         </TableCell></Link>
                     </TableRow>
                 </TableBody>

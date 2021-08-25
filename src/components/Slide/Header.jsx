@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { productContext } from '../../contexts/ProductsContext';
 
 const Header = () => {
+  const history = useHistory()
+const { getProducts} = useContext(productContext)
+
+const handleValue = (e) => {
+  const search = new URLSearchParams(history.location.search);
+  search.set('q', e.target.value);
+  history.push(`${history.location.pathname}?${search.toString()}`);
+  getProducts(history);
+};
   return (
-    <nav className="navbar navbar-dark navbar-expand-lg fixed-top bg-black-transparent shadow">
-      <a className="navbar-brand" href="/">
-        Skin Care
-      </a>
+    <>
+    <nav position='fixed' className="navbar navbar-dark navbar-expand-lg fixed-top bg-black-transparent shadow">
+
+      
       <button
         className="navbar-toggler"
         type="button"
@@ -21,28 +32,37 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" to="/list" style={{color:'pink' }}>
               Shop Now
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">
-              Link
-            </a>
+            <Link className="nav-link" to="/favorites" style={{color:'pink' }}>
+              Favorites
+            </Link>
           </li>
+          
           <li className="nav-item">
-            <a className="nav-link" href="/">
-              Home
-            </a>
+            <Link className="nav-link" to="/cart" style={{color:'pink' }}>
+              Shopping bag
+            </Link>
           </li>
+
           <li className="nav-item">
-            <a className="nav-link" href="/">
-              Link
-            </a>
+            <Link className="nav-link" to="/signup" style={{color:'pink' }}>
+              Sign Up or Sign In
+            </Link>
           </li>
+          <input  onChange={(e) => handleValue(e)}className="search" placeholder="Search..." style={{color:'pink' , borderRadius:'10px' , borderColor:'pink' , width:'100px', height:'30px',margin:"auto " , backgroundColor:'transparent' }}/>
         </ul>
       </div>
+
+      <div className="logo" ><Link className="navbar-brand" to="/"  style={{color:'pink' , fontWeight:'bold' , fontSize:'36px' , marginRight:'640px'}}>
+        Skin Care
+      </Link></div>
     </nav>
+    
+    </>
   );
 };
 

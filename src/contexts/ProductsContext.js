@@ -1,17 +1,21 @@
 import axios from 'axios';
-import React, { useReducer, useState } from 'react';
+import React, { useContext, useReducer, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { calcSubPrice, calcTotalPrice } from '../helpers/calcPrice';
 import { API } from '../helpers/constants';
 
 export const productContext = React.createContext()
-
+export const useProduct = () => {
+    return useContext(productContext)
+}
 const INIT_STATE = {
     products: [],
     edit: null,
     paginatedPages: 1,
-    cart: {},
+    cart: [],
     cartLength: 0,
-    detail: {}
+    detail: [],
+    favorites:[]
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -19,7 +23,7 @@ const reducer = (state = INIT_STATE, action) => {
         case "GET_PRODUCTS":
             return {
                 ...state, products: action.payload.data,
-                paginatedPages: Math.ceil(action.payload.headers["x-total-count"] / 6)
+                paginatedPages: Math.ceil(action.payload.headers["x-total-count"] / 3)
             }
         case "GET_EDIT_PRODUCT":
             return {
@@ -37,6 +41,10 @@ const reducer = (state = INIT_STATE, action) => {
             return {
                 ...state, detail: action.payload
             }
+        case "CHANGE_FAVORITES_COUNT":
+            return{
+                ...state, favorites:action.payload
+            }
         default: return state
     }
 }
@@ -44,18 +52,29 @@ const reducer = (state = INIT_STATE, action) => {
 const ProductsContext = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
     const [bar, setBar]=useState    (false)
+    const history = useHistory()
 
-    const getProducts = async (history) => {
-        const search = new URLSearchParams(history.location.search)
-        search.set('_limit', 10)
-        history.push(`${history.location.pathname}?${search.toString()}`)
-        let data = await axios(`${API}/products${window.location.search}`)
+    // const getProducts = async (history) => {
+    //     const search = new URLSearchParams(history.location.search)
+    //     search.set('_limit', 9)
+    //     history.push(`${history.location.pathname}?${search.toString()}`)
+    //     let data = await axios(`${API}/products/${window.location.search}`)
+    //     dispatch({
+    //         type: "GET_PRODUCTS",
+    //         payload: data
+    //     })
+    // }
+
+    const getProducts = async(history) => {
+        const search = new URLSearchParams(history.location.search);
+        search.set('_limit', 9);
+        history.push(`${history.location.pathname}?${search.toString()}`);
+        const data = await axios(`${API}/products/${window.location.search}`);
         dispatch({
-            type: "GET_PRODUCTS",
-            payload: data
-        })
+        type: "GET_PRODUCTS",
+        payload: data,
+        });
     }
-
     const addProduct = async (newProduct) => {
         console.log(newProduct);
         try {
@@ -187,6 +206,74 @@ const ProductsContext = ({ children }) => {
     const openSidebar=()=>{
         setBar(true)
     }
+        const addProductInFavorites = (product) => {
+            let favorites = JSON.parse(localStorage.getItem('favorites'));
+        if (!favorites) {
+            favorites = {
+            products: [],
+          };
+        }
+        let newProduct = {
+          item: product,
+        };
+    
+        let productToFind = favorites.products.filter((item) => item.item.id === product.id);
+        if (productToFind.length === 0) {
+            favorites.products.push(newProduct);
+        } else {
+            favorites.products = favorites.products.filter((item) => item.item.id !== product.id);
+        }
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        dispatch({
+          type: "CHANGE_FAVORITES_COUNT",
+          payload: favorites,
+        });
+        }
+
+    const getFavoritesLength = () => {
+        let favorites = JSON.parse(localStorage.getItem('favorites'))
+        if (!favorites) {
+            favorites = {
+                products: [],
+                
+            }
+        }
+        dispatch({
+            type: "CHANGE_FAVORITES_COUNT",
+            payload: favorites.product.length
+        })
+    }
+
+    const getFavorites = () => {
+        let favorites = JSON.parse(localStorage.getItem('favorites'));
+        if (!favorites) {
+          localStorage.setItem(
+            'favorites',
+            JSON.stringify({
+              products: [],
+            })
+          );
+          favorites = {
+            products: [],
+          };
+        }
+        dispatch({
+          type: "CHANGE_FAVORITES_COUNT",
+          payload: favorites,
+        });
+      };
+
+    const checkProductinFavorites = (id) => {
+        let favorites = JSON.parse(localStorage.getItem('favorites'))
+        if (!favorites) {
+            favorites = {
+                products: [],
+            
+            }
+        }
+        let newFavorites = favorites.products.filter(elem => elem.item.id === id)
+        return newFavorites.length > 0 ? true : false
+    }
 
 
     return (
@@ -196,7 +283,8 @@ const ProductsContext = ({ children }) => {
             paginatedPages: state.paginatedPages,
             cart: state.cart,
             cartLength: state.cartLength,
-            detail: state.detail,
+            productDetail: state.detail,
+            favorites:state.favorites,
             getProducts,
             addProduct,
             editProduct,
@@ -206,12 +294,16 @@ const ProductsContext = ({ children }) => {
             getCartLength,
             changeProductCount,
             checkProductInCart,
+            checkProductinFavorites,
             getCart,
             getDetail,
             openSidebar,
             setBar,
             bar,
-            buy
+            buy,
+            getFavorites, 
+            addProductInFavorites, 
+            getFavoritesLength
         }}>
             {children}
         </productContext.Provider>

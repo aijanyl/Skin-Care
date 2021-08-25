@@ -2,7 +2,7 @@ import { Button, IconButton, makeStyles, Paper, TextField } from '@material-ui/c
 import React, { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { productContext } from '../../contexts/ProductsContext';
 
 const useStyles = makeStyles(theme => ({
@@ -53,8 +53,8 @@ const Edit = () => {
     }
 
     return (
-        <Paper elevation={3} className={classes.paper}>
-            <h1>Update product</h1>
+        <Paper elevation={3} className={classes.paper} style={{marginTop:'100px'}} >
+            <h1 className="upd" style={{color:'pink'}}>Update product</h1>
             {
                 values ? (
                     <div style={{ display: 'flex', justifyContent: 'space-between', color: 'black' }}>
@@ -85,9 +85,11 @@ const Edit = () => {
                                     rows={4}
                                 />
                             </form>
+                            <Link to={'/list'}>
                             <IconButton aria-label="share" onClick={handleSave}>
-                                <Button variant="contained" className={classes.buttonSave}>Save</Button>
+                                <Button variant="contained" style={{color:'pink'}} className={classes.buttonSave}>Save</Button>
                             </IconButton>
+                            </Link>
                         </div>
                     </div>
                 ) : (<h1>Loading...</h1>)
